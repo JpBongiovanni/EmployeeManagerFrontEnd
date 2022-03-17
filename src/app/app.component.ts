@@ -12,9 +12,12 @@ import { NgForm } from '@angular/forms';
 
 export class AppComponent implements OnInit {
   public employees: Employee[];
+  public editEmployee!: Employee;
+  public deleteEmployee!: Employee;
 
   constructor(private employeeService: EmployeeService) {
     this.employees = [];
+    
   }
 
   ngOnInit(){
@@ -33,6 +36,63 @@ export class AppComponent implements OnInit {
     );
   }
 
+public onAddEmployee(addForm: NgForm): void {
+  document.getElementById("add-employee-form")?.click();
+  this.employeeService.addEmployee(addForm.value).subscribe(
+    (response: Employee) => {
+      console.log(response);
+      this.getEmployees();
+      addForm.reset();
+    },
+    (response: HttpErrorResponse) => {
+      alert(Error.name);
+      addForm.reset();
+    }
+  )
+}
+
+public onUpdateEmployee(employee: Employee): void {
+  this.employeeService.updateEmployee(employee).subscribe(
+    (response: Employee) => {
+      console.log(response);
+      this.getEmployees();
+    },
+    (response: HttpErrorResponse) => {
+      alert(Error.name);
+    }
+  )
+}
+
+public onDeleteEmployee(employeeId: number): void {
+  this.employeeService.deleteEmployee(employeeId).subscribe(
+    (response: void) => {
+      console.log(response);
+      this.getEmployees();
+    },
+    (response: HttpErrorResponse) => {
+      alert(Error.name);
+    }
+  )
+}
+
+public searchEmployees(key: string): void {
+  const results: Employee[] = [];
+  for(const employee of this.employees){
+    if(employee.name.toLowerCase().indexOf(key.toLowerCase()) !== -1 ||
+      employee.email.toLowerCase().indexOf(key.toLowerCase()) !== -1 ||
+      employee.phone.toLowerCase().indexOf(key.toLowerCase()) !== -1 ||
+      employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) !== -1){
+        results.push(employee);
+    }
+  }
+  this.employees = results;
+  if(results.length === 0 || !key){
+    this.getEmployees();
+  }
+}
+
+
+
   public onOpenModal(employee: Employee, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
@@ -41,15 +101,15 @@ export class AppComponent implements OnInit {
     button.setAttribute('data-toggle', 'modal');
 
     if (mode === 'add'){
-      console.log(mode);
+      
       button.setAttribute('data-target', '#addEmployeeModal');
     }
     if (mode === 'edit'){
-      console.log(mode);
+      this.editEmployee = employee;
       button.setAttribute('data-target', '#updateEmployeeModal');
     }
     if (mode === 'delete'){
-      console.log(mode);
+      this.deleteEmployee = employee;
       button.setAttribute('data-target', '#deleteEmployeeModal');
     }
     container.appendChild(button);
