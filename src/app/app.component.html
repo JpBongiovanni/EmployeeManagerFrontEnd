@@ -37,10 +37,14 @@
                       <div class="col-6 card-title align-self-center mb-0">
                           <h5>{{employee?.name}}</h5>
                           <p class="m-0">{{employee?.jobTitle}}</p>
+                          <p class="m-0">{{employee?.age}}</p>
                       </div>
                   </div>
+                  <div class="col-12 card-title align-self-center mb-0">
+                    <p>{{employee?.bio}}</p>
+                  </div>
                   <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><i class="fa fa-envelope float-right"></i><a href="#">{{employee?.email}}</a></li>
+                      <li class="list-group-item"><i class="fa fa-envelope float-right"></i><a href="mailto:{{employee?.email}}">{{employee?.email}}</a></li>
                       <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{employee?.phone}}</li>
                   </ul>
                   <div class="card-body">
@@ -73,6 +77,10 @@
                     <div class="form-group">
                       <label for="name">Name</label>
                       <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Age</label>
+                      <input type="text" ngModel name="age" class="form-control" id="age" aria-describedby="emailHelp" placeholder="age">
                     </div>
                     <div class="form-group">
                       <label for="email">Email Address</label>
@@ -115,6 +123,14 @@
                         <div class="form-group">
                           <label for="name">Name</label>
                           <input type="text" ngModel="{{editEmployee?.name}}" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="name">Age</label>
+                          <input type="text" ngModel="{{editEmployee?.age}}" name="age" class="form-control" id="age" aria-describedby="emailHelp" placeholder="age">
+                        </div>
+                        <div class="form-group">
+                          <label for="name">Bio</label>
+                          <input type="text" ngModel="{{editEmployee?.bio}}" name="bio" class="form-control" id="bio" aria-describedby="emailHelp" placeholder="Short Biography">
                         </div>
                         <input type="hidden" ngModel="{{editEmployee?.id}}" name="id" class="form-control" id="id" placeholder="Email">
                         <input type="hidden" ngModel="{{editEmployee?.employeeCode}}" name="userCode" class="form-control" id="userCode" placeholder="Email">

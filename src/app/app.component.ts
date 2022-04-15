@@ -91,8 +91,6 @@ public searchEmployees(key: string): void {
   }
 }
 
-
-
   public onOpenModal(employee: Employee, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
