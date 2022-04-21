@@ -42,7 +42,8 @@ body{
     margin-bottom: 30px;
 }
 .w-60 {
-    width: 60px;
+    margin-left: 5px;
+    width: 100px;
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 10px;

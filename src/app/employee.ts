@@ -8,4 +8,7 @@ export interface Employee {
     employeeCode: string;
     age: string;
     bio: string;
+    link1: string;
+    link2: string;
+    link3: string;
 }
