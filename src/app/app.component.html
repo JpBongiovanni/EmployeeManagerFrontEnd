@@ -53,9 +53,9 @@
                         <a (click)="onOpenModal(employee, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
                       </div>
                       <ul class="social-links list-inline mb-0">
-                          <li class="list-inline-item"><a title="facebook" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{employee?.link1}}" data-original-title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
-                          <li class="list-inline-item"><a title="twitter" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{employee?.link2}}" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                          <li class="list-inline-item"><a title="linkedin" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{employee?.link3}}" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                          <li class="list-inline-item" *ngIf="employee?.link1"><a title="facebook" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{employee?.link1}}" target="_blank" rel="noopener noreferrer" data-original-title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                          <li class="list-inline-item" *ngIf="employee?.link2"><a title="twitter" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{employee?.link2}}" target="_blank" rel="noopener noreferrer" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                          <li class="list-inline-item" *ngIf="employee?.link3"><a title="linkedin" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{employee?.link3}}" target="_blank" rel="noopener noreferrer" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                       </ul>
                   </div>
               </div>
