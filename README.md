@@ -1,27 +1,25 @@
-# Employeemanagerapp
+### Employee Management System - Java, Spring Boot, Angular, MySQL
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+EMS platform that enables administrators to sort, filter, and display employee information. Leverages **Java** and **Spring Boot** to build a scalable database and integrated a search feature with **Angular** to query database and present **MySQL** employee data in real time -- [Front End](https://github.com/JpBongiovanni/EmployeeManagerFrontEnd) -- [Back End](https://github.com/JpBongiovanni/EmployeeManager)
 
-## Development server
+![EMS](https://github.com/JpBongiovanni/EmployeeManagerFrontEnd/blob/main/gifs/1.gif?raw=true)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Filter database results in real time using search function
 
-## Code scaffolding
+![EMS](https://github.com/JpBongiovanni/EmployeeManagerFrontEnd/blob/main/gifs/2.gif?raw=true)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Delete employee entries quickly and efficiently
 
-## Build
+![EMS](https://github.com/JpBongiovanni/EmployeeManagerFrontEnd/blob/main/gifs/3.gif?raw=true)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Quickly edit employee information
 
-## Running unit tests
+![EMS](https://github.com/JpBongiovanni/EmployeeManagerFrontEnd/blob/main/gifs/4.gif?raw=true)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+View Employee Links
 
-## Running end-to-end tests
+![EMS](https://github.com/JpBongiovanni/EmployeeManagerFrontEnd/blob/main/gifs/5.gif?raw=true)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Easily Add Employees to your managment system
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![EMS](https://github.com/JpBongiovanni/EmployeeManagerFrontEnd/blob/main/gifs/6.gif?raw=true)
